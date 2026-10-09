@@ -45,3 +45,8 @@ tests/vulntest_scanners.db
 .env
 .env.local
 *.key
+# ---- Build artifacts ----
+vulynx.egg-info/
+build/
+dist/
+*.egg-info/

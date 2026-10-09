@@ -5,8 +5,8 @@ from urllib.parse import urlparse
 
 import requests
 
-import vulynx
-from scanner.crawler import Crawler
+from vulynx.cli import main as vulynx_main
+from vulynx.crawler import Crawler
 
 
 def _paths(pages):
@@ -43,7 +43,7 @@ def test_crawler_respects_robots_txt(app_url):
 def test_full_scan_pipeline(app_url, tmp_path, monkeypatch):
     out = str(tmp_path / "scan")
     monkeypatch.setattr("sys.argv", ["vulynx", "-u", app_url, "--confirm", "--delay", "0", "-o", out])
-    vulynx.main()
+    vulynx_main()
 
     report = json.loads((tmp_path / "scan.json").read_text(encoding="utf-8"))
     found = {(f["category"], urlparse(f["url"]).path) for f in report["findings"]}

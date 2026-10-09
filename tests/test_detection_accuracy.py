@@ -6,11 +6,11 @@ dynamic pages, pages that only talk about SQL errors, and non-state-changing for
 import requests
 from bs4 import BeautifulSoup
 
-from scanner.auth import AuthScanner
-from scanner.findings import FindingsCollector
-from scanner.forms import extract_form_fields
-from scanner.sqli import SQLiScanner
-from scanner.textdiff import differs
+from vulynx.auth import AuthScanner
+from vulynx.findings import FindingsCollector
+from vulynx.forms import extract_form_fields
+from vulynx.sqli import SQLiScanner
+from vulynx.textdiff import differs
 
 
 def _form(html):

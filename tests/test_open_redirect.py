@@ -13,8 +13,8 @@ import pytest
 import requests
 from flask import Flask, redirect, request, Response
 
-from scanner.findings import FindingsCollector
-from scanner.open_redirect import OpenRedirectScanner
+from vulynx.findings import FindingsCollector
+from vulynx.open_redirect import OpenRedirectScanner
 
 
 # ---- Test Flask app -------------------------------------------------- #

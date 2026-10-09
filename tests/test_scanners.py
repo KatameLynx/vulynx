@@ -7,10 +7,10 @@ The Flask app and its DB are started once in conftest.py; these tests reuse it.
 import requests
 from bs4 import BeautifulSoup
 
-from scanner.sqli import SQLiScanner
-from scanner.xss import XSSScanner
-from scanner.auth import AuthScanner
-from scanner.findings import FindingsCollector
+from vulynx.sqli import SQLiScanner
+from vulynx.xss import XSSScanner
+from vulynx.auth import AuthScanner
+from vulynx.findings import FindingsCollector
 
 
 # ---- SQLi ----------------------------------------------------------- #

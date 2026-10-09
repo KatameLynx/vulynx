@@ -3,11 +3,11 @@
 Vulynx - web application vulnerability scanner.
 
 Examples:
-  python3 vulynx.py -u https://your-test-site.com
-  python3 vulynx.py -u https://your-test-site.com --confirm --max-pages 100 --delay 1.0
-  python3 vulynx.py -u https://your-test-site.com --confirm --cookie "session=abc123"
+  vulynx -u https://your-test-site.com
+  vulynx -u https://your-test-site.com --confirm --max-pages 100 --delay 1.0
+  vulynx -u https://your-test-site.com --confirm --cookie "session=abc123"Only scan applications you own or have explicit written 
 
-Only scan applications you own or have explicit written authorization to test.
+authorization to test.
 """
 
 import argparse
@@ -17,14 +17,14 @@ from datetime import datetime
 
 import requests
 
-from scanner.crawler import Crawler
-from scanner.findings import FindingsCollector
-from scanner.sqli import SQLiScanner
-from scanner.xss import XSSScanner
-from scanner.auth import AuthScanner
-from scanner.headers import HeadersScanner
-from scanner.open_redirect import OpenRedirectScanner
-from scanner.report import write_json_report, write_html_report
+from vulynx.crawler import Crawler
+from vulynx.findings import FindingsCollector
+from vulynx.sqli import SQLiScanner
+from vulynx.xss import XSSScanner
+from vulynx.auth import AuthScanner
+from vulynx.headers import HeadersScanner
+from vulynx.open_redirect import OpenRedirectScanner
+from vulynx.report import write_json_report, write_html_report
 
 
 def setup_logging(verbose: bool):

@@ -10,10 +10,9 @@ Each test checks a behavior of HeadersScanner:
 
 import pytest
 
-from scanner.crawler import Page
-from scanner.findings import FindingsCollector
-from scanner.headers import HeadersScanner
-
+from vulynx.crawler import Page
+from vulynx.findings import FindingsCollector
+from vulynx.headers import HeadersScanner
 
 @pytest.fixture
 def collector():
